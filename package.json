@@ -1,7 +1,7 @@
 {
-    "name": "casper",
-    "description": "A clean, minimal default theme for the Ghost publishing platform",
-    "demo": "https://demo.ghost.io",
+    "name": "codeacocktail5",
+    "description": "A fork of Casper 5 for codeacocktail.com",
+    "demo": "https://codeacocktail.com",
     "version": "5.2.1",
     "engines": {
         "ghost": ">=5.0.0"
@@ -22,9 +22,9 @@
         "postship": "git fetch && gulp release"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org/"
+        "name": "Roman S",
+        "email": "smok@mybarapp.com",
+        "url": "https://codeacocktail.com"
     },
     "gpm": {
         "type": "theme",
@@ -40,10 +40,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Casper.git"
+        "url": "https://github.com/smokxx/CasperCodeACocktail.git"
     },
-    "bugs": "https://github.com/TryGhost/Casper/issues",
-    "contributors": "https://github.com/TryGhost/Casper/graphs/contributors",
+    "bugs": "https://github.com/smokxx/CasperCodeACocktail/issues",
+    "contributors": "https://github.com/smokxx/CasperCodeACocktail/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.0",
         "autoprefixer": "10.4.7",
@@ -163,6 +163,15 @@
             "show_recent_posts_footer": {
                 "type": "boolean",
                 "default": true,
+                "group": "post"
+            },
+            "instagram_link": {
+                "type": "text",
+                "default": ""
+            },
+            "disqus_short_name": {
+                "type": "text",
+                "default": "",
                 "group": "post"
             }
         }

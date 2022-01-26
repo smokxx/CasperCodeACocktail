@@ -1,6 +1,9 @@
-# Casper
+# CasperCodeACocktail
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/). This is the latest development version of Casper! If you're just looking to download the latest release, head over to the [releases](https://github.com/TryGhost/Casper/releases) page.
+A hacky fork of the default theme "Casper" for [Ghost](http://github.com/tryghost/ghost/). The changes are:
+- Instagram icon in the navigation bar, link configurable in theme config
+- Lazy translation (only "Subscribe" and "X min to read") to Russian (locales/ru.json)
+- Lazy-load Disqus integration (Disqus ID configurable)
 
 &nbsp;
 

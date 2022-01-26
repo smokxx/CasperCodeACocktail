@@ -51,7 +51,7 @@ into the {body} tag of the default.hbs template --}}
                 <div class="byline-meta-content">
                     <time class="byline-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
                     {{#if reading_time}}
-                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time}}</span>
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
                     {{/if}}
                 </div>
             </div>
@@ -86,11 +86,39 @@ into the {body} tag of the default.hbs template --}}
         {{content}}
     </section>
 
-    {{!--
-    <section class="article-comments gh-canvas">
-        If you want to embed comments, this is a good place to paste your code!
-    </section>
-    --}}
+    {{#if @custom.disqus_short_name}}
+      <section class="article-comments gh-canvas">
+      <div id="disqus_thread">Loading comments...</div>
+      <script>
+      var disqus_loaded = false;
+      function disqus() {
+          if (!disqus_loaded) {
+          disqus_loaded = true;
+          var disqus_config = function () {
+              this.page.url = "{{url absolute="true"}}";
+              this.page.identifier = "ghost-{{comment_id}}"
+          };
+          (function() {
+              var d = document, s = d.createElement('script');
+              s.src = 'https://{{@custom.disqus_short_name}}.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+          }
+      }
+
+      // Load Disqus only when the initial Disqus div becomes visible on screen.
+      window.addEventListener('scroll', function(e) {
+          var disqus_target = document.getElementById('disqus_thread');
+          if (!disqus_target) return;
+          var rect = disqus_target.getBoundingClientRect();
+          if (rect.bottom > 0 && rect.top <= (window.innerHeight || document.documentElement.clientHeight)) {
+              disqus();
+          }
+      }, false);
+      </script>
+      </section>
+    {{/if}}
 
 </article>
 </main>
